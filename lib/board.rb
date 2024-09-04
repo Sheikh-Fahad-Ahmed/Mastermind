@@ -14,10 +14,17 @@ class Board
 
   def show_board
     clear
+
+    divider = '------+------+------'
+    feedback_help = "\n\nFeedback:\n1 - a color is in its place\n0 - a color is present but not in its place"
+    puts divider
+    puts 'Mastermind'
+    puts "\n\nEmpyt..\n\n" if board.empty?
+    puts feedback_help
+    puts divider
   end
 
   def clear
     print "\e[2J\e[H"
   end
 end
-
