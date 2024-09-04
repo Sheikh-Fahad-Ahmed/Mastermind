@@ -18,5 +18,6 @@ module Display
     puts '2. Show previous code'
     puts '3. Show all colors'
     puts '4. Exit'
+    puts 'Enter your choice: '
   end
 end

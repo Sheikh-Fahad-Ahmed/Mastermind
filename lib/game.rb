@@ -15,11 +15,11 @@ class Game
     loop do
       start_menu
       choice = gets.chomp.to_i
-      go_to_choice(choice)
+      start_menu_choice(choice)
     end
   end
 
-  def go_to_choice(choice)
+  def start_menu_choice(choice)
     case choice
     when 1
       start_game
@@ -28,7 +28,6 @@ class Game
     when 4
       exit 0
     end
-
   end
 
   def start_game
@@ -36,6 +35,26 @@ class Game
     @secret_code = @all_colors.generate_secret_code
     puts 'Secret code generated'
     puts "You get 12 turns...Let's Begin"
-    p @secret_code
+    count = 1
+    until count == 12
+      puts "\n Turn #{count} "
+      game_menu
+      choice = gets.chomp.to_i
+      count += 1 if choice == 1
+      game_menu_choice(choice)
+    end
+  end
+
+  def game_menu_choice(choice)
+    case choice
+    when 1
+      puts 'player turn'
+    when 2
+      puts 'Previous input'
+    when 3
+      puts @all_colors.colors.join(' ')
+    when 4
+      exit 0
+    end
   end
 end
