@@ -1,10 +1,10 @@
 class Board
-  attr_accessor :board, :feeback, :colors
+  attr_accessor :board, :feedback, :colors
 
   def initialize
     @user_input = []
-    @board = []
-    @feedback = []
+    @board = ['YRBG']
+    @feedback = ['010101']
     @colors = Colors.new
   end
 
@@ -20,6 +20,9 @@ class Board
     puts divider
     puts 'Mastermind'
     puts "\n\nEmpyt..\n\n" if board.empty?
+    board.zip(feedback).each do |item, feeback|
+      puts "#{item}    #{feeback}"
+    end
     puts feedback_help
     puts divider
   end
