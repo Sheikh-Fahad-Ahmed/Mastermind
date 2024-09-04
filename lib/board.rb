@@ -1,8 +1,11 @@
 class Board
-  attr_accessor :board
+  attr_accessor :board, :feeback, :colors
 
   def initialize
+    @user_input = []
     @board = []
+    @feedback = []
+    @colors = Colors.new
   end
 
   def update_board(arr)
@@ -10,12 +13,11 @@ class Board
   end
 
   def show_board
-    p board
+    clear
+  end
+
+  def clear
+    print "\e[2J\e[H"
   end
 end
 
-board = Board.new
-
-board.update_board('YRGB')
-
-board.show_board

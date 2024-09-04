@@ -3,11 +3,12 @@
 require_relative 'display'
 
 class Game
-  attr_reader :all_colors, :secret_code
+  attr_reader :all_colors, :secret_code, :board
 
   include Display
   def initialize
     @all_colors = Colors.new
+    @board = Board.new
   end
 
   def start
@@ -38,10 +39,8 @@ class Game
     count = 1
     until count == 12
       puts "\n Turn #{count} "
-      game_menu
-      choice = gets.chomp.to_i
-      count += 1 if choice == 1
-      game_menu_choice(choice)
+      board.show_board
+      count += 1
     end
   end
 
