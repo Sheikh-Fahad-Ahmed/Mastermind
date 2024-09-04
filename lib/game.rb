@@ -40,20 +40,28 @@ class Game
     until count == 12
       puts "\n Turn #{count} "
       board.show_board
+      input = get_user_input
       count += 1
     end
+
+    
   end
 
-  def game_menu_choice(choice)
-    case choice
-    when 1
-      puts 'player turn'
-    when 2
-      puts 'Previous input'
-    when 3
-      puts @all_colors.colors.join(' ')
-    when 4
-      exit 0
-    end
+  def get_user_input
+    puts 'Enter only the first letter of the colors (only 4):'
+    gets.chomp
   end
+
+  # def game_menu_choice(choice)
+  #   case choice
+  #   when 1
+  #     puts 'player turn'
+  #   when 2
+  #     puts 'Previous input'
+  #   when 3
+  #     puts @all_colors.colors.join(' ')
+  #   when 4
+  #     exit 0
+  #   end
+  # end
 end
