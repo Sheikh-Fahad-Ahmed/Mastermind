@@ -28,6 +28,7 @@ class Game
     when 4
       exit 0
     end
+
   end
 
   def start_game
