@@ -10,7 +10,3 @@ class Colors
   end
 end
 
-color = Colors.new
-
-p color.generate_secret_code
-p color.colors
