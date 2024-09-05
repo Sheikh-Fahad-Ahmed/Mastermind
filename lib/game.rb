@@ -3,11 +3,11 @@
 require_relative 'display'
 
 class Game
-  attr_reader :all_colors, :secret_code, :board
+  attr_reader :color_instance, :secret_code, :board
 
   include Display
   def initialize
-    @all_colors = Colors.new
+    @color_instance = Colors.new
     @board = Board.new
   end
 
@@ -25,7 +25,7 @@ class Game
     when 1
       start_game
     when 2
-      puts @all_colors.colors.join(' ')
+      puts @color_instance.colors.join(' ')
     when 4
       exit 0
     end
@@ -41,10 +41,10 @@ class Game
       puts "\n Turn #{count} "
       board.show_board
       input = get_user_input
+      user_colors = color_instance.get_colors_from_input(input)
+      board.update_board(user_colors)
       count += 1
     end
-
-    
   end
 
   def get_user_input

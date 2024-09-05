@@ -9,6 +9,23 @@ class Colors
     @colors.sample(4)
   end
 
-  def get_colors_from_input
+  def get_colors_from_input(input)
+    user_colors = []
+    input.each do |char|
+      case char
+      when 'y'
+        user_colors.push('Yellow')
+      when 'r'
+        user_colors.push('Red')
+      when 'g'
+        user_colors.push('Green')
+      when 'b'
+        user_colors.push('Blue')
+      when 'o'
+        user_colors.push('Orange')
+      when 'p'
+        user_colors.push('Purple')
+      end
+    end
   end
 end

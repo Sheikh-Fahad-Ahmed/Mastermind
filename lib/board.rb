@@ -8,8 +8,8 @@ class Board
     @colors = Colors.new
   end
 
-  def update_board(arr)
-    board.push(arr)
+  def update_board(string)
+    board.push(string)
   end
 
   def show_board
