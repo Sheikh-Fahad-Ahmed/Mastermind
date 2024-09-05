@@ -9,9 +9,9 @@ class Colors
     @colors.sample(4)
   end
 
-  def get_colors_from_input(input)
+  def colors_from_input(input)
     user_colors = []
-    input.each do |char|
+    input.downcase.split('').each do |char|
       case char
       when 'y'
         user_colors.push('Yellow')
@@ -27,5 +27,8 @@ class Colors
         user_colors.push('Purple')
       end
     end
+    user_colors
   end
 end
+
+

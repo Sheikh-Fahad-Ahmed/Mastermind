@@ -33,21 +33,23 @@ class Game
 
   def start_game
     puts "Generating secret code...\n.\n.\n."
-    @secret_code = @all_colors.generate_secret_code
+    @secret_code = @color_instance.generate_secret_code
     puts 'Secret code generated'
     puts "You get 12 turns...Let's Begin"
     count = 1
     until count == 12
       puts "\n Turn #{count} "
-      board.show_board
-      input = get_user_input
-      user_colors = color_instance.get_colors_from_input(input)
+      p secret_code
+      input = user_input
+      user_colors = color_instance.colors_from_input(input)
       board.update_board(user_colors)
+      board.update_feedback(user_colors, secret_code)
+      board.show_board
       count += 1
     end
   end
 
-  def get_user_input
+  def user_input
     puts 'Enter only the first letter of the colors (only 4):'
     gets.chomp
   end
