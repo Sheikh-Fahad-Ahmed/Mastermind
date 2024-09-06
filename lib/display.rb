@@ -23,6 +23,13 @@ module Display
     exit 0
   end
 
+  def loser
+    clear
+
+    puts "\n\tSorry, You ran out of guess..."
+    puts "\n\tThe secret code is: "
+  end
+
   def clear
     print "\e[2J\e[H"
   end

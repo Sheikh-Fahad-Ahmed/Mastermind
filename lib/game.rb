@@ -37,7 +37,7 @@ class Game
     puts 'Secret code generated'
     puts "You get 12 turns...Let's Begin"
     count = 1
-    until count == 12
+    until count > 12
       puts "\n Turn #{count} "
       p secret_code
       input = user_input
@@ -46,6 +46,11 @@ class Game
       board.update_feedback(user_colors, secret_code)
       board.show_board
       winner if board.correct_guess?(user_colors, secret_code)
+      if count == 12
+        loser
+        puts "\n\t#{secret_code.join(' ')}"
+        exit 0
+      end
       count += 1
     end
   end
