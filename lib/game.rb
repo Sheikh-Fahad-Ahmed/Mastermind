@@ -45,6 +45,7 @@ class Game
       board.update_board(user_colors)
       board.update_feedback(user_colors, secret_code)
       board.show_board
+      winner if board.correct_guess?(user_colors, secret_code)
       count += 1
     end
   end

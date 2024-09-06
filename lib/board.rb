@@ -44,6 +44,10 @@ class Board
     puts divider
   end
 
+  def correct_guess?(user_colors, secret_code)
+    user_colors == secret_code
+  end
+
   def clear
     print "\e[2J\e[H"
   end

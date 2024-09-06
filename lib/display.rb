@@ -13,4 +13,17 @@ module Display
     puts '4. Exit'
     puts 'Enter your choice: '
   end
+
+  def winner
+    clear
+
+    puts "\n\n\tYou Guessed it!!!"
+    puts "\n\tCongratualiations!!!"
+    puts "\n\tThank you for playing."
+    exit 0
+  end
+
+  def clear
+    print "\e[2J\e[H"
+  end
 end
