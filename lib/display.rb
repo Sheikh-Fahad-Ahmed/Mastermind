@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Display
   def welcome_message
     puts 'Welcome to The Mastermind'
@@ -11,15 +13,4 @@ module Display
     puts '4. Exit'
     puts 'Enter your choice: '
   end
-
-  
-
-  # def game_menu 
-  #   puts '------Menu------'
-  #   puts '1. Input your code'
-  #   puts '2. Show previous code'
-  #   puts '3. Show all colors'
-  #   puts '4. Exit'
-  #   puts 'Enter your choice: '
-  # end
 end

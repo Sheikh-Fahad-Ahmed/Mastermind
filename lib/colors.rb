@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Colors
   attr_reader :colors
 
@@ -30,5 +32,3 @@ class Colors
     user_colors
   end
 end
-
-

@@ -50,20 +50,11 @@ class Game
   end
 
   def user_input
-    puts 'Enter only the first letter of the colors (only 4):'
-    gets.chomp
-  end
+    puts 'Enter only the first letter of the colors (only 4 and no duplicates):'
+    input = gets.chomp.downcase
+    return input if (input.size == 4) && (input.split('').uniq.size == 4)
 
-  # def game_menu_choice(choice)
-  #   case choice
-  #   when 1
-  #     puts 'player turn'
-  #   when 2
-  #     puts 'Previous input'
-  #   when 3
-  #     puts @all_colors.colors.join(' ')
-  #   when 4
-  #     exit 0
-  #   end
-  # end
+    puts "\nInvalid input, Try again!"
+    user_input
+  end
 end
